@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  MiauAPP:
+    image: MiauAPP:v1.0
+    container_name: ElMismoMiau
+    hostname: MiauAPP
+    ports:
+     - "5555:5555"
+    expose:
+     - "5555"
+    networks:
+     - default
+    volumes:
+     - MiauAPP:/MicroServ1
+
+networks:
+  default:
+    ipam:
+      config:
+       - subnet: 10.10.0.0/24
+
+volumes:
+  MiauAPP: ~
